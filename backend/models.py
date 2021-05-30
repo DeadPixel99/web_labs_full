@@ -109,6 +109,7 @@ class Follower(models.Model): #rename model to UserFollows or find a better name
 class ConnectedUsers(models.Model):
     sessionId = models.CharField(max_length=200)
     connected = models.DateTimeField(auto_now_add=True, blank=True)
+    username = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
-        return "%s connected at %s" % (self.first_name, self.connected)
+        return "Session ID '%s' connected at %s" % (self.username if self.username else self.sessionId, self.connected)
