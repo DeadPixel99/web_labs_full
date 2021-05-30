@@ -13,4 +13,17 @@
   <link rel="stylesheet" type="text/css" href="{% static 'social/style.css' %}">
 
   <script src="{% static "frontend/main.js" %}"></script>
+  <script>
+    const chatSocket = new WebSocket(
+    'ws://'
+    + window.location.host
+    + '/ws/'
+    );
+    
+
+    chatSocket.onclose = function(e) {
+    console.error('Chat socket closed unexpectedly');
+  };
+
+  </script>
 </html>

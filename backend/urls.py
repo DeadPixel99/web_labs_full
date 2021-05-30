@@ -21,6 +21,7 @@ urlpatterns = [
 
 
     path('', include(router.urls)),
+    path('api/online/', views.users_online),
     path('api/get-current-authenticated-user-id/', views.currentUser, name='current_user_id'),
     path('api/post/rate/', views.PostRateViewSet.as_view(), name='rate'),
     path('api/post/rating/<int:pk>/', views.PostRateViewSet.as_view(), name='rating'),

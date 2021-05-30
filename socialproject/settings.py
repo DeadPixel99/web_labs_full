@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'drf_yasg',
+    'channels'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -92,7 +93,7 @@ TEMPLATES = [
 ]
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 WSGI_APPLICATION = 'socialproject.wsgi.application'
-
+ASGI_APPLICATION = "socialproject.asgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
