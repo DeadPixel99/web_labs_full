@@ -2,6 +2,7 @@ from django.urls import path, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from rest_framework.routers import SimpleRouter
+from .views.tasks import send_email_task, run_long_task, list_finished_tasks
 
 from . import views
 
@@ -19,6 +20,9 @@ urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('api-auth/', include('rest_framework.urls')),
 
+    path('run/send_email/', send_email_task),
+    path('run/long_work/', run_long_task),
+    path('run/list', list_finished_tasks),
 
     path('', include(router.urls)),
     path('api/online/', views.users_online),
